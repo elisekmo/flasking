@@ -43,7 +43,8 @@ pipeline {
                 script{
                     try{
                     sh "kubectl create namespace ${namespace}"
-                    }catch (Exception e) {
+                    }
+                    catch (Exception e) {
                         echo "Exception handled"
                     }   
                 }
