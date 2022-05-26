@@ -18,6 +18,7 @@ pipeline {
         git(url: 'https://github.com/elisekmo/flasking.git', branch: 'main')
       }
     }
+  }
     stage('Build Stage') {
       steps {
         script {
@@ -51,5 +52,10 @@ pipeline {
             }
         }
     }
-  }
+    stage('Clean Up') {
+        steps {
+            sh "docker image prune -af"
+        }
+    }
+    
 }
