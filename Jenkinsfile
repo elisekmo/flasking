@@ -52,10 +52,5 @@ pipeline {
             }
         }
     }
-    stage('Clean Up') {
-        steps {
-            sh "docker image prune -af"
-        }
-    }
-    
+  }
 }
