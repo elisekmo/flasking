@@ -18,7 +18,6 @@ pipeline {
         git(url: 'https://github.com/elisekmo/flasking.git', branch: 'main')
       }
     }
-  }
     stage('Build Stage') {
       steps {
         script {
@@ -43,8 +42,7 @@ pipeline {
                 script{
                     try{
                     sh "kubectl create namespace ${namespace}"
-                    }
-                    catch (Exception e) {
+                    }catch (Exception e) {
                         echo "Exception handled"
                     }   
                 }
@@ -54,3 +52,5 @@ pipeline {
         }
     }
   }
+  
+}
